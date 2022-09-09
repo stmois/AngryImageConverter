@@ -14,7 +14,7 @@ if (processMode != ProcessMode.AutoscanAndAutoConvert)
 }
 
 var files = processMode == ProcessMode.AutoscanAndAutoConvert 
-    ? Directory.GetFiles(string.IsNullOrWhiteSpace(ConfigurationManager.AppSettings.Get("ProcessMode")) 
+    ? Directory.GetFiles(string.IsNullOrWhiteSpace(ConfigurationManager.AppSettings.Get("AutoScanFolderPath"))
         ? throw new ArgumentException("Ошибка папки сбора изображений")
         : ConfigurationManager.AppSettings.Get("AutoScanFolderPath")!, "*.*", SearchOption.AllDirectories) 
     : Directory.GetFiles(paths.fromFullPath == string.Empty 
